@@ -1,0 +1,16 @@
+name: CI/CD Pipeline example
+
+on: [push, pull_request ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clonar el Código
+        uses: actions/checkout@v2
+
+      - name: Instalar dependencias
+        run: npm install
+
+      - name: Ejecutar pruebas
+        run: npm test
